@@ -1,7 +1,7 @@
 {
 	"name": "chatgptx",
 	"productName": "ChatGPTx",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "The best AI ever",
 	"license": "MIT",
 	"repository": "https://github.com/florindumitru/chatgpt-desktop-tray",
