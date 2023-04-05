@@ -1,6 +1,6 @@
 # ChatGPT Desktop - Tray App
 
-This is a tray app for ChatGPT. Using this app you can easily access the ChatGPT from your system tray.
+This is a simple tray app for ChatGPT. Using this app you can easily access the ChatGPT from your system tray.
 
 <img src="https://i.imgur.com/2hT08rk.png" alt="ChatGPT Desktop - Tray App" height="600px">
 
