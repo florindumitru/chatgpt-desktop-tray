@@ -1,6 +1,6 @@
 # ChatGPT Desktop - Tray App
 
-This is a tray app for the ChatGPT. Using this app you can easily access the ChatGPT from your system tray.
+This is a tray app for ChatGPT. Using this app you can easily access the ChatGPT from your system tray.
 
 <img src="https://i.imgur.com/2hT08rk.png" alt="ChatGPT Desktop - Tray App" height="600px">
 
@@ -11,17 +11,17 @@ This is a tray app for the ChatGPT. Using this app you can easily access the Cha
 
 **macOS**
 
-[**Download**](https://github.com/user/repo/releases/latest) the `.dmg` file.
+[**Download**](https://github.com/florindumitru/chatgpt-desktop-tray/releases/latest) the `.dmg` file.
 
 **Linux**
 
-[**Download**](https://github.com/user/repo/releases/latest) the `.AppImage` or `.deb` file.
+[**Download**](https://github.com/florindumitru/chatgpt-desktop-tray/releases/latest) the `.AppImage` or `.deb` file.
 
 *The AppImage needs to be [made executable](http://discourse.appimage.org/t/how-to-make-an-appimage-executable/80) after download.*
 
 **Windows**
 
-[**Download**](https://github.com/user/repo/releases/latest) the `.exe` file.
+[**Download**](https://github.com/florindumitru/chatgpt-desktop-tray/releases/latest) the `.exe` file.
 
 ---
 
