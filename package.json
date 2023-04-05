@@ -1,0 +1,80 @@
+{
+	"name": "chatgptx",
+	"productName": "ChatGPTx",
+	"version": "0.1.0",
+	"description": "The best AI ever",
+	"license": "MIT",
+	"repository": "https://github.com/florindumitru/chatgpt-desktop",
+	"author": {
+		"name": "Florin Dumitru",
+		"email": "dumitru.florin@outlook.com",
+		"url": "https://github.com/florindumitru/chatgpt-desktop"
+	},
+	"scripts": {
+		"postinstall": "electron-builder install-app-deps",
+		"lint": "xo",
+		"test": "npm run lint",
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder --macos --linux --windows",
+		"release": "np"
+	},
+	"dependencies": {
+		"electron-context-menu": "^3.4.0",
+		"electron-debug": "^3.2.0",
+		"electron-store": "^8.1.0",
+		"electron-traywindow-positioner": "^1.1.1",
+		"electron-unhandled": "^4.0.1",
+		"electron-updater": "^5.2.1",
+		"electron-util": "^0.17.2"
+	},
+	"devDependencies": {
+		"electron": "^13.0.0",
+		"electron-builder": "^23.3.3",
+		"np": "^7.6.2",
+		"xo": "^0.51.0"
+	},
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		],
+		"rules": {
+			"unicorn/prefer-module": "off"
+		}
+	},
+	"np": {
+		"publish": false,
+		"releaseDraft": false
+	},
+	"build": {
+		"appId": "com.qubevo.chatgptx",
+		"mac": {
+			"category": "public.app-category.social-networking",
+			"darkModeSupport": true,
+			"identity": "Apple Development: office@qubevo.com (BLJ66743QZ)"
+		},
+		"dmg": {
+			"iconSize": 160,
+			"contents": [
+				{
+					"x": 180,
+					"y": 170
+				},
+				{
+					"x": 480,
+					"y": 170,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb"
+			],
+			"category": "Network;Chat"
+		}
+	}
+}
