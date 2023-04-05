@@ -31,7 +31,7 @@ const createTray = () => {
 				type: 'normal',
 				click() {
 					shell.openExternal(
-						'https://github.com/florindumitru/chatgpt-desktop',
+						'https://github.com/florindumitru/chatgpt-desktop-tray',
 					);
 				},
 			},

@@ -4,11 +4,11 @@
 	"version": "0.1.0",
 	"description": "The best AI ever",
 	"license": "MIT",
-	"repository": "https://github.com/florindumitru/chatgpt-desktop",
+	"repository": "https://github.com/florindumitru/chatgpt-desktop-tray",
 	"author": {
 		"name": "Florin Dumitru",
 		"email": "dumitru.florin@outlook.com",
-		"url": "https://github.com/florindumitru/chatgpt-desktop"
+		"url": "https://github.com/florindumitru/chatgpt-desktop-tray"
 	},
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
