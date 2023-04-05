@@ -1,7 +1,7 @@
-const {app, BrowserWindow, Tray, Menu, shell} = require('electron');
-const path = require('path');
-const process = require('process');
-const positioner = require('electron-traywindow-positioner');
+const { app, BrowserWindow, Tray, Menu, shell } = require("electron");
+const path = require("path");
+const process = require("process");
+const positioner = require("electron-traywindow-positioner");
 
 let window = null;
 let tray = null;
@@ -20,24 +20,24 @@ const toggleWindow = () => {
 };
 
 const createTray = () => {
-	tray = new Tray(path.join(__dirname, 'static', 'Icon.png'));
-	tray.on('click', () => {
+	tray = new Tray(path.join(__dirname, "static", "Icon.png"));
+	tray.on("click", () => {
 		toggleWindow();
 	});
-	tray.on('right-click', () => {
+	tray.on("right-click", () => {
 		const contextMenu = Menu.buildFromTemplate([
 			{
-				label: 'Github',
-				type: 'normal',
+				label: "Github",
+				type: "normal",
 				click() {
 					shell.openExternal(
-						'https://github.com/florindumitru/chatgpt-desktop-tray',
+						"https://github.com/florindumitru/chatgpt-desktop-tray"
 					);
 				},
 			},
 
-			{type: 'separator'},
-			{label: 'Quit', type: 'normal', role: 'quit'},
+			{ type: "separator" },
+			{ label: "Quit", type: "normal", role: "quit" },
 		]);
 
 		tray.popUpContextMenu(contextMenu);
@@ -51,33 +51,36 @@ const createWindow = () => {
 		height: 600,
 		show: false,
 		frame: false,
-		icon: path.join(__dirname, 'static', 'iconp.png'),
+		icon: path.join(__dirname, "static", "iconp.png"),
 		webPreferences: {
 			nodeIntegration: true,
 		},
 	});
-	app.dock.setIcon(path.join(__dirname, 'static', 'iconp.png'));
+
 	window.menuBarVisible = false;
-	window.loadURL('https://chat.openai.com/chat');
+	window.loadURL("https://chat.openai.com/chat");
 	window.setSkipTaskbar(true);
-	app.dock.hide();
+	if (process.platform === "darwin") {
+		app.dock.hide();
+		app.dock.setIcon(path.join(__dirname, "static", "iconp.png"));
+	}
 };
 
-app.on('ready', () => {
+app.on("ready", () => {
 	createWindow();
 	createTray();
 });
 
-app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+	if (process.platform !== "darwin") {
 		app.quit();
 	}
 });
-app.on('will-quit', () => {
+app.on("will-quit", () => {
 	// GlobalShortcut.unregisterAll();
 });
 
-app.on('activate', () => {
+app.on("activate", () => {
 	if (BrowserWindow.getAllWindows().length === 0) {
 		createWindow();
 	}
