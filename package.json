@@ -1,23 +1,20 @@
 {
-	"name": "chatgptx",
-	"productName": "ChatGPTx",
+	"name": "gptray",
+	"productName": "GPTray",
 	"version": "1.0.1",
-	"description": "The best AI ever",
+	"description": "A tray container for ChatGPT",
 	"license": "MIT",
-	"repository": "https://github.com/florindumitru/chatgpt-desktop-tray",
-	"author": {
-		"name": "Florin Dumitru",
-		"email": "dumitru.florin@outlook.com",
-		"url": "https://github.com/florindumitru/chatgpt-desktop-tray"
-	},
+	"repository": "https://github.com/link00000000/chatgpt-desktop-tray",
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
 		"lint": "xo",
 		"test": "npm run lint",
-		"start": "electron .",
-		"pack": "electron-builder --dir",
+		"start": "electron ./build",
+		"prestart": "npm run build",
+		"pack": "electron-builder --dir ./build",
 		"dist": "electron-builder --macos --linux --windows",
-		"release": "np"
+		"release": "np",
+		"build": "tsc"
 	},
 	"dependencies": {
 		"electron-context-menu": "^3.4.0",
@@ -29,6 +26,7 @@
 		"electron-util": "^0.17.2"
 	},
 	"devDependencies": {
+		"@types/electron": "^1.6.10",
 		"electron": "^13.0.0",
 		"electron-builder": "^23.3.3",
 		"np": "^7.6.2",
@@ -40,7 +38,12 @@
 			"browser"
 		],
 		"rules": {
-			"unicorn/prefer-module": "off"
+			"unicorn/prefer-module": "off",
+			"quotes": ["error", "double"],
+			"@typescript-eslint/quotes": ["error", "double"],
+			"object-curly-spacing": ["error", "always"],
+			"@typescript-eslint/object-curly-spacing": ["error", "always"],
+			"import/extensions": ["error", "never"]
 		}
 	},
 	"np": {
@@ -48,11 +51,10 @@
 		"releaseDraft": false
 	},
 	"build": {
-		"appId": "com.qubevo.chatgptx",
+		"appId": "com.accidentallycoded.gptray",
 		"mac": {
-			"category": "public.app-category.social-networking",
-			"darkModeSupport": true,
-			"identity": "Apple Development: office@qubevo.com (BLJ66743QZ)"
+			"category": "public.app-category.productivity",
+			"darkModeSupport": false
 		},
 		"dmg": {
 			"iconSize": 160,
