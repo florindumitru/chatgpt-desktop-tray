@@ -1,4 +1,5 @@
 import type { Configuration } from 'webpack';
+import CopyPlugin from "copy-webpack-plugin";
 
 export const mainConfig: Configuration = {
     entry: './src/index.ts',
@@ -36,4 +37,14 @@ export const mainConfig: Configuration = {
     resolve: {
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
     },
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: "src/assets",
+                    to: "assets"
+                }
+            ]
+        })
+    ]
 };

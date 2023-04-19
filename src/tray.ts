@@ -2,7 +2,7 @@ import { Menu, Tray } from "electron";
 import path from "node:path";
 import * as window from "./window";
 
-const tray = new Tray(path.join(__dirname, "..", "static", "Icon.png"));
+const tray = new Tray(path.join(__dirname, "assets", "tray-icon.png"));
 export const instance = tray;
 
 const contextMenu = Menu.buildFromTemplate([
