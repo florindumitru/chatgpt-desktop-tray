@@ -1,0 +1,35 @@
+{
+    "envs": [
+        "node",
+        "browser"
+    ],
+    "rules": {
+        "unicorn/prefer-module": "off",
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "@typescript-eslint/quotes": [
+            "error",
+            "double"
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "@typescript-eslint/object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "import/extensions": [
+            "error",
+            "never"
+        ],
+        "import/no-extraneous-dependencies": [
+            "off"
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+            "off"
+        ]
+    }
+}

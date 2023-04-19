@@ -1,4 +1,4 @@
-import { BrowserWindow, Tray } from "electron";
+import { BrowserWindow, type Tray } from "electron";
 import path from "node:path";
 import positioner from "electron-traywindow-positioner";
 
