@@ -1,6 +1,7 @@
 import type { ForgeConfig } from '@electron-forge/shared-types';
 import { MakerZIP } from '@electron-forge/maker-zip';
 import { MakerSquirrel } from '@electron-forge/maker-squirrel';
+import { MakerWix } from '@electron-forge/maker-wix';
 import { MakerDeb } from '@electron-forge/maker-deb';
 import { MakerRpm } from '@electron-forge/maker-rpm';
 import { MakerFlatpak } from '@electron-forge/maker-flatpak';
@@ -20,6 +21,9 @@ const config: ForgeConfig = {
         new MakerSquirrel({
             iconUrl: "https://raw.githubusercontent.com/link00000000/gptray/use-electron-forge/icons/icon.ico",
             setupIcon: "./icons/installers/squirrel/icon.ico"
+        }),
+        new MakerWix({
+            icon: "./icons/installers/wix/icon.ico"
         }),
         new MakerDMG({
             icon: "./icons/installers/dmg/icon.icns"
