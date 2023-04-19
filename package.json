@@ -3,7 +3,7 @@
     "productName": "GPTray",
     "version": "1.0.0",
     "description": "A tray container for ChatGPT",
-	"repository": "https://github.com/link00000000/chatgpt-desktop-tray",
+    "repository": "https://github.com/link00000000/chatgpt-desktop-tray",
     "main": ".webpack/main",
     "scripts": {
         "start": "electron-forge start",
@@ -20,8 +20,12 @@
     "license": "MIT",
     "devDependencies": {
         "@electron-forge/cli": "^6.1.1",
+        "@electron-forge/maker-appx": "^6.1.1",
         "@electron-forge/maker-deb": "^6.1.1",
+        "@electron-forge/maker-dmg": "^6.1.1",
+        "@electron-forge/maker-flatpak": "^6.1.1",
         "@electron-forge/maker-rpm": "^6.1.1",
+        "@electron-forge/maker-snap": "^6.1.1",
         "@electron-forge/maker-squirrel": "^6.1.1",
         "@electron-forge/maker-zip": "^6.1.1",
         "@electron-forge/plugin-webpack": "^6.1.1",
